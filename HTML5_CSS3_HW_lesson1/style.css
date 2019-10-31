@@ -10,7 +10,7 @@
 }
 .container {
     margin: 0 auto;
-    width: 1280px;
+    max-width: 1280px;
     font-family: "Arial MT", Helvetica, sans-serif;
 }
 h1 {
@@ -83,6 +83,19 @@ h6 {
 .r {
     padding: 95px 0 0 45px;
 }
+.screen {
+    width: 36%;
+}
+.screen-text {
+    width: 64%;
+    padding: 0 10px 15px;
+}
+.review {
+    width: 18%;
+}
+.review-text {
+    width: 78%;
+}
 .bg-padding {
     padding: 50px;
 }
@@ -124,7 +137,7 @@ ul.text {
     list-style-type: none;
 }
 ul.text li {
-    background: url("img/plus.png") no-repeat 0 6%;
+    background: url("img/plus.png") no-repeat 0 5%;
     padding: 0 23px 35px 40px;
 }
 ul.text li:last-child{
@@ -140,19 +153,35 @@ ol li {
     font-weight: 400;
     line-height: 24px;
 }
-.grid {
+/*.grid {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 15px;
     padding-right: 15px;
-}
+}*/
 .user-text {
-    color: #333333;
+    color: #333;
     font-size: 14px;
+    font-style: italic;
     font-weight: 400;
     line-height: 18px;
-    background: url("img/bg_review.png") no-repeat;
+    background: #ebebeb;
     padding: 15px 20px 15px 27px;
+    border-radius: 5px;
+    position: relative;
+}
+.user-text:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -10px;
+    top: 27px;
+    background: #ebebeb;
+    transform: rotate(45deg);
+}
+.left .review-text, .right .review-text {
+    margin-bottom: 20px;
 }
 footer span {
     color: #989898;
@@ -225,4 +254,39 @@ textarea {
 footer div.text:last-child {
     background-color: #fff;
     text-align: center;
+}
+@media screen and (max-width: 1200px) {
+    ul.text li:last-child {
+        padding: 0 23px 35px 40px;
+        background-position: 0 4%;
+    }
+    ul.text li {
+        background-position: 0 4%;
+    }
+    .logo, .menu, .product, .video, .left, .right, .screen, .screen-text, .review,
+    .review-text, .footleft, .footright, .l, .r, .mid {
+        width: 100%;
+    }
+    .footleft {
+        padding-left: 0;
+    }
+    .l, .r {
+        padding: 0;
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .logo img, .video img {
+        width: 100%;
+        padding-top: 10px;
+    }
+    .video {
+        padding: 0;
+    }
+    input, textarea {
+        width: 100%;
+    }
+    button[type="submit"].send {
+        margin: 0;
+    }
 }
